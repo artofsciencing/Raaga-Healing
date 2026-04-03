@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Healing Raagas</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+/* Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Container */
+.container {
+  padding: 20px;
+}
+
+/* Title */
+h1 {
+  font-weight: 300;
+  margin-top: 20px;
+}
+
+/* Buttons */
+button {
+  margin: 6px;
+  padding: 10px 16px;
+  border-radius: 25px;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #38bdf8;
+  color: black;
+}
+
+/* Breathing Circle */
+.circle {
+  width: 120px;
+  height: 120px;
+  margin: 30px auto;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  animation: breathe 8s infinite;
+}
+
+@keyframes breathe {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+/* Text */
+#breathText {
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+/* Player */
+iframe {
+  margin-top: 20px;
+  width: 90%;
+  max-width: 500px;
+  height: 250px;
+  border-radius: 12px;
+  border: none;
+}
+
+/* Fade */
+.fade {
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎶 Healing Raagas</h1>
+<p>Pause… breathe… choose what you need</p>
+
+<!-- Buttons -->
+<button onclick="play('anxiety')">😟 Calm Mind</button>
+<button onclick="play('grief')">😢 Release Emotion</button>
+<button onclick="play('sleep')">😴 Deep Rest</button>
+<button onclick="play('love')">❤️ Open Heart</button>
+<button onclick="play('clarity')">🍀 Clarity</button>
+
+<!-- Breathing Circle -->
+<div class="circle"></div>
+<div id="breathText">Breathe slowly…</div>
+
+<!-- Player -->
+<div class="fade">
+<iframe id="player" src=""></iframe>
+<p>▶ Press play to begin</p>
+</div>
+
+</div>
+
+<script>
+const ragas = {
+  anxiety: {
+    video: "https://www.youtube.com/embed/Z0ZC9Qz3k0k",
+    breath: "Inhale… 2…3…4 | Exhale… 2…3…4…5…6…7…8"
+  },
+  grief: {
+    video: "https://www.youtube.com/embed/Yk1Qm1mS3F4",
+    breath: "Let feelings rise… no need to control"
+  },
+  sleep: {
+    video: "https://www.youtube.com/embed/Fj6FfC8mWk0",
+    breath: "Slow long exhale… release everything"
+  },
+  love: {
+    video: "https://www.youtube.com/embed/K3Qzzggn--s",
+    breath: "Breathe into your heart… soften"
+  },
+  clarity: {
+    video: "https://www.youtube.com/embed/6pYQk7xJ9gU",
+    breath: "Ask gently… what matters today?"
+  }
+};
+
+function play(state) {
+  const r = ragas[state];
+  document.getElementById("player").src = r.video;
+  document.getElementById("breathText").innerText = r.breath;
+}
+</script>
+
+</body>
+</html>
