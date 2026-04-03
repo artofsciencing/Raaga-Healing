@@ -84,16 +84,6 @@ iframe {
   border-radius: 12px;
   border: none;
 }
-
-/* Fade */
-.fade {
-  animation: fadeIn 1s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 </style>
 </head>
 
@@ -116,33 +106,31 @@ iframe {
 <div id="breathText">Breathe slowly…</div>
 
 <!-- Player -->
-<div class="fade">
-<iframe id="player" src=""></iframe>
+<iframe id="player" src="" allow="autoplay"></iframe>
 <p>▶ Press play to begin</p>
-</div>
 
 </div>
 
 <script>
 const ragas = {
   anxiety: {
-    video: "https://www.youtube.com/embed/Z0ZC9Qz3k0k",
+    video: "https://www.youtube.com/embed/1ZYbU82GVz4",
     breath: "Inhale… 2…3…4 | Exhale… 2…3…4…5…6…7…8"
   },
   grief: {
-    video: "https://www.youtube.com/embed/Yk1Qm1mS3F4",
+    video: "https://www.youtube.com/embed/0Gq7z0n6g9E",
     breath: "Let feelings rise… no need to control"
   },
   sleep: {
-    video: "https://www.youtube.com/embed/Fj6FfC8mWk0",
+    video: "https://www.youtube.com/embed/6pYQk7xJ9gU",
     breath: "Slow long exhale… release everything"
   },
   love: {
-    video: "https://www.youtube.com/embed/K3Qzzggn--s",
+    video: "https://www.youtube.com/embed/5qap5aO4i9A",
     breath: "Breathe into your heart… soften"
   },
   clarity: {
-    video: "https://www.youtube.com/embed/6pYQk7xJ9gU",
+    video: "https://www.youtube.com/embed/DWcJFNfaw9c",
     breath: "Ask gently… what matters today?"
   }
 };
